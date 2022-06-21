@@ -24,19 +24,19 @@ public interface GoodsDao {
     /**
      * 查询index_banner(首页轮播商品)中信息
      */
-    @Select("select * from index_banner order by `index`")
+    @Select("select * from index_banner order by od")
     List<IndexGoodsBanner> findAllIndexBanner();
 
     /**
      * 查询index_promotion(首页促销活动)中所有信息
      */
-    @Select("select * from index_promotion order by `index`")
+    @Select("select * from index_promotion order by od")
     List<IndexPromotionBanner> findAllPromotionBanner();
 
     /**
      * 添加index_promotion表记录
      */
-    @Insert("insert into index_promotion(name,url,image,index) values(#{name},#{url},#{image},${index})")
+    @Insert("insert into index_promotion(name,url,image,od) values(#{name},#{url},#{image},${od})")
     void addPromotionBanner(IndexPromotionBanner promotionBanner);
 
     /**
@@ -49,14 +49,14 @@ public interface GoodsDao {
      * 根据typeID查询表index_type_banner内容
      * 并获取其对应sku的内容
      */
-    @Select("select * from index_type_goods where type_id=#{typeId} and display_type=1 order by `index`")
+    @Select("select * from index_type_goods where type_id=#{typeId} and display_type=1 order by od")
     List<IndexTypeBanner> findImageIndexTypeByTypeId(Integer typeId);
 
     /**
      * 根据typeID查询表index_type_banner内容
      * 并获取其对应sku内容
      */
-    @Select("select * from index_type_goods where type_id=#{typeId} and display_type=0 order by `index`")
+    @Select("select * from index_type_goods where type_id=#{typeId} and display_type=0 order by od")
     List<IndexTypeBanner> findTitleIndexTypeByTypeId(Integer typeId);
 
     /**

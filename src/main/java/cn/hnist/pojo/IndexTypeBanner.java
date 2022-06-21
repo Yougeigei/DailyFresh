@@ -9,7 +9,7 @@ public class IndexTypeBanner implements Serializable {
 
     private Integer id;
     private Integer display_type;   // 展示类型(0:标题展示；1:图片展示)
-    private Integer index;             // 展示顺序
+    private Integer od;             // 展示顺序
     private Integer sku_id;         // 商品SKU
     private Integer type_id;        // 商品类型
 
@@ -39,12 +39,12 @@ public class IndexTypeBanner implements Serializable {
         this.display_type = display_type;
     }
 
-    public Integer getIndex() {
-        return index;
+    public Integer getOd() {
+        return od;
     }
 
     public void setOd(Integer od) {
-        this.index = od;
+        this.od = od;
     }
 
     public Integer getSku_id() {
