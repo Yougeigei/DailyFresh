@@ -11,7 +11,7 @@
  Target Server Version : 50562
  File Encoding         : 65001
 
- Date: 07/06/2022 12:09:55
+ Date: 21/06/2022 12:09:59
 */
 
 SET NAMES utf8mb4;
@@ -67,8 +67,8 @@ CREATE TABLE `auth_group_permissions`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `auth_group_permissions_group_id_permission_id_0cd325b0_uniq`(`group_id`, `permission_id`) USING BTREE,
   INDEX `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm`(`permission_id`) USING BTREE,
-  CONSTRAINT `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `auth_group_permissions_group_id_b120cbf9_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  CONSTRAINT `auth_group_permissions_group_id_b120cbf9_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
@@ -152,8 +152,8 @@ CREATE TABLE `df_user_user_permissions`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `df_user_user_permissions_user_id_permission_id_b22997de_uniq`(`user_id`, `permission_id`) USING BTREE,
   INDEX `df_user_user_permiss_permission_id_40a6cb2d_fk_auth_perm`(`permission_id`) USING BTREE,
-  CONSTRAINT `df_user_user_permiss_permission_id_40a6cb2d_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `df_user_user_permissions_user_id_b5f6551b_fk_df_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  CONSTRAINT `df_user_user_permissions_user_id_b5f6551b_fk_df_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `df_user_user_permiss_permission_id_40a6cb2d_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
@@ -176,8 +176,8 @@ CREATE TABLE `django_admin_log`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `django_admin_log_content_type_id_c4bce8eb_fk_django_co`(`content_type_id`) USING BTREE,
   INDEX `django_admin_log_user_id_c564eba6_fk_df_user_id`(`user_id`) USING BTREE,
-  CONSTRAINT `django_admin_log_user_id_c564eba6_fk_df_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `django_admin_log_content_type_id_c4bce8eb_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  CONSTRAINT `django_admin_log_content_type_id_c4bce8eb_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `django_admin_log_user_id_c564eba6_fk_df_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
@@ -354,42 +354,42 @@ CREATE TABLE `goods_sku`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `df_goods_sku_goods_id_31622280_fk_df_goods_id`(`goods_id`) USING BTREE,
   INDEX `df_goods_sku_type_id_576de3b4_fk_df_goods_type_id`(`type_id`) USING BTREE,
-  CONSTRAINT `df_goods_sku_type_id_576de3b4_fk_df_goods_type_id` FOREIGN KEY (`type_id`) REFERENCES `goods_type` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `df_goods_sku_goods_id_31622280_fk_df_goods_id` FOREIGN KEY (`goods_id`) REFERENCES `goods` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  CONSTRAINT `df_goods_sku_goods_id_31622280_fk_df_goods_id` FOREIGN KEY (`goods_id`) REFERENCES `goods` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `df_goods_sku_type_id_576de3b4_fk_df_goods_type_id` FOREIGN KEY (`type_id`) REFERENCES `goods_type` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB AUTO_INCREMENT = 30 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of goods_sku
 -- ----------------------------
 INSERT INTO `goods_sku` VALUES (1, '2017-11-15 03:10:14', '2017-11-14 08:24:49', 0, '草莓 500g', '草莓简介', 10.00, '500g', '/images/goods/goods003.jpg', 98, 0, 1, 1, 1);
-INSERT INTO `goods_sku` VALUES (2, '2017-11-15 03:11:04', '2017-11-14 08:44:43', 0, '盒装草莓', '草莓简介', 20.00, '盒', 'group1/M00/00/00/rBCzg1oKrPuAKse1AAEc8FlxEvU2553153', 10, 0, 1, 1, 1);
-INSERT INTO `goods_sku` VALUES (3, '2017-11-15 03:12:32', '2017-11-14 08:25:22', 0, '葡萄', '葡萄简介', 20.00, '500g', 'group1/M00/00/00/rBCzg1oKqHKAYfXaAAAjjiYTEkw5436358', 7, 0, 1, 2, 1);
-INSERT INTO `goods_sku` VALUES (4, '2017-11-15 03:13:16', '2017-11-14 08:25:34', 0, '柠檬', '简介', 32.00, '500g', 'group1/M00/00/00/rBCzg1oKqH6AMZt_AAAgnaeGwNQ6246033', 12, 0, 1, 3, 1);
-INSERT INTO `goods_sku` VALUES (5, '2017-11-15 03:14:05', '2017-11-14 08:25:56', 0, '奇异果', '简介', 12.12, '500g', 'group1/M00/00/00/rBCzg1oKqJSAS1xIAAAeuLYy0pU6253560', 12, 0, 1, 4, 1);
-INSERT INTO `goods_sku` VALUES (6, '2017-11-15 03:15:09', '2017-11-14 08:26:09', 0, '大青虾', '简介', 34.00, '500g', 'group1/M00/00/00/rBCzg1oKqKGAFAV-AAA5OS4Kl4c4097622', 12, 0, 1, 5, 2);
-INSERT INTO `goods_sku` VALUES (7, '2017-11-15 03:15:53', '2017-11-14 08:26:19', 0, '北海道秋刀鱼', '简介', 50.00, '500g', 'group1/M00/00/00/rBCzg1oKqKuAavf8AAAkaP_7_187862565', 15, 0, 1, 6, 2);
-INSERT INTO `goods_sku` VALUES (8, '2017-11-15 03:16:24', '2017-11-14 08:26:31', 0, '扇贝', '简介', 56.60, '500g', 'group1/M00/00/00/rBCzg1oKqLeATLQAAAAk8WCqqmI2968215', 13, 0, 1, 7, 2);
-INSERT INTO `goods_sku` VALUES (9, '2017-11-15 03:17:13', '2017-11-14 08:26:58', 0, '基围虾', '简介', 100.90, '500g', 'group1/M00/00/00/rBCzg1oKqNKANQKOAAAk0DN4-yE7007770', 14, 0, 1, 8, 2);
-INSERT INTO `goods_sku` VALUES (10, '2017-11-15 03:17:47', '2017-11-14 08:29:56', 0, '猪肉', '简介', 23.99, '500g', 'group1/M00/00/00/rBCzg1oKqYSASWr0AAEVpb1YHUE4011268', 100, 0, 1, 9, 3);
-INSERT INTO `goods_sku` VALUES (11, '2017-11-15 03:18:15', '2017-11-14 08:31:27', 0, '牛肉', '简介', 34.99, '500g', 'group1/M00/00/00/rBCzg1oKqd-AUsoBAAEExAU4yXU2908730', 100, 0, 1, 10, 3);
-INSERT INTO `goods_sku` VALUES (12, '2017-11-15 03:18:44', '2017-11-14 08:32:22', 0, '羊肉', '简介', 56.99, '500g', 'group1/M00/00/00/rBCzg1oKqhaAKgwkAAB6NOQDrpk3374052', 100, 0, 1, 11, 3);
-INSERT INTO `goods_sku` VALUES (13, '2017-11-15 03:19:10', '2017-11-14 08:33:15', 0, '牛排', '简介', 99.99, '500g', 'group1/M00/00/00/rBCzg1oKqkuAUD0WAACwa3rCDPQ3064181', 100, 0, 1, 12, 3);
-INSERT INTO `goods_sku` VALUES (14, '2017-11-15 03:19:44', '2017-11-14 08:34:31', 0, '盒装鸡蛋', '简介', 23.00, '500g', 'group1/M00/00/00/rBCzg1oKqpeAZnSEAADUKbwLSqY1972845', 100, 0, 1, 13, 4);
-INSERT INTO `goods_sku` VALUES (15, '2017-11-15 03:20:20', '2017-11-14 08:35:21', 0, '鸡肉', '简介', 32.00, '500g', 'group1/M00/00/00/rBCzg1oKqsmAVxzcAADUY5hC_sI5143658', 100, 0, 1, 14, 4);
-INSERT INTO `goods_sku` VALUES (16, '2017-11-15 03:20:53', '2017-11-14 08:37:27', 0, '鸭蛋', '简介', 45.00, '盒', 'group1/M00/00/00/rBCzg1oKq0eAMxKFAAFC_2tSkFo4950479', 121, 0, 1, 15, 4);
-INSERT INTO `goods_sku` VALUES (17, '2017-11-15 03:21:22', '2017-11-14 08:38:08', 0, '鸡腿', '简介', 45.00, '500g', 'group1/M00/00/00/rBCzg1oKq3CADiewAAA2_p7G96w3860045', 12, 0, 1, 16, 4);
-INSERT INTO `goods_sku` VALUES (18, '2017-11-15 03:22:04', '2017-11-14 08:38:45', 0, '白菜', '简介', 4.50, '500g', 'group1/M00/00/00/rBCzg1oKq5WAQnWDAADWHYeKaNI7952227', 100, 0, 1, 17, 5);
-INSERT INTO `goods_sku` VALUES (19, '2017-11-15 03:22:31', '2017-11-14 08:39:40', 0, '芹菜', '简介', 3.50, '500g', 'group1/M00/00/00/rBCzg1oKq8yAa_CvAACIrzuaK646641688', 12, 0, 1, 18, 5);
-INSERT INTO `goods_sku` VALUES (20, '2017-11-15 03:23:21', '2017-11-14 08:40:08', 0, '香菜', '简介', 7.90, '500g', 'group1/M00/00/00/rBCzg1oKq-iAUG8xAACNpHC0IEY3849954', 100, 0, 1, 19, 5);
-INSERT INTO `goods_sku` VALUES (21, '2017-11-15 03:23:46', '2017-11-14 08:40:38', 0, '冬瓜', '简介', 12.99, '500g', 'group1/M00/00/00/rBCzg1oKrAaAN1Z6AAENHrNG1-s8874196', 100, 0, 1, 20, 5);
-INSERT INTO `goods_sku` VALUES (22, '2017-11-15 03:24:10', '2017-11-14 08:41:19', 0, '鱼丸', '简介', 66.00, '500g', 'group1/M00/00/00/rBCzg1oKrC-ACdOBAADZQphQJ2o3748807', 12, 0, 1, 21, 6);
-INSERT INTO `goods_sku` VALUES (23, '2017-11-15 03:24:37', '2017-11-14 08:41:59', 0, '蟹棒', '简介', 68.00, '500g', 'group1/M00/00/00/rBCzg1oKrFeAJ9PuAABxy5vKkgY2006901', 100, 0, 1, 22, 6);
-INSERT INTO `goods_sku` VALUES (24, '2017-11-15 03:25:18', '2017-11-14 08:42:25', 0, '虾丸', '简介', 89.99, '500g', 'group1/M00/00/00/rBCzg1oKrHGADF7jAABICav_wjk1418828', 100, 0, 1, 23, 6);
-INSERT INTO `goods_sku` VALUES (25, '2017-11-15 03:25:56', '2017-11-14 08:43:18', 0, '速冻水饺', '简介', 20.00, '袋', 'group1/M00/00/00/rBCzg1oKrKaAFrRTAACMoBJXjDs3577358', 100, 0, 1, 24, 6);
-INSERT INTO `goods_sku` VALUES (26, '2017-11-14 08:53:00', '2017-11-14 08:53:00', 0, '越南芒果', '新鲜越南芒果', 29.90, '2.5kg', 'group1/M00/00/00/rBCzg1oKruyABIIzAAByzTJcTjM7085820', 100, 0, 1, 25, 1);
-INSERT INTO `goods_sku` VALUES (27, '2017-11-17 07:57:00', '2017-11-17 07:57:00', 0, '鹌鹑蛋', '简介', 39.80, '126枚', 'group1/M00/00/00/rBCzg1oOlkyAHiH3AAGZ6KapWiA5556935', 100, 0, 1, 26, 4);
-INSERT INTO `goods_sku` VALUES (28, '2017-11-17 07:58:18', '2017-11-17 07:58:18', 0, '鹅蛋', '简介', 49.90, '6枚', 'group1/M00/00/00/rBCzg1oOlpqAOZ8gAADg_NUp5b47679136', 80, 0, 1, 27, 4);
-INSERT INTO `goods_sku` VALUES (29, '2017-11-17 07:59:48', '2017-11-17 07:59:48', 0, '红辣椒', '简介', 11.00, '2.5kg', 'group1/M00/00/00/rBCzg1oOlvWAB6BMAAHXO8pdocY9345486', 150, 0, 1, 28, 5);
+INSERT INTO `goods_sku` VALUES (2, '2017-11-15 03:11:04', '2017-11-14 08:44:43', 0, '盒装草莓', '草莓简介', 20.00, '盒', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5Gi9WANAfbAADhpU9_Ylo4727207', 10, 0, 1, 1, 1);
+INSERT INTO `goods_sku` VALUES (3, '2017-11-15 03:12:32', '2017-11-14 08:25:22', 0, '葡萄', '葡萄简介', 20.00, '500g', '/images/goods/goods002.jpg', 9999, 0, 1, 2, 1);
+INSERT INTO `goods_sku` VALUES (4, '2017-11-15 03:13:16', '2017-11-14 08:25:34', 0, '柠檬', '简介', 32.00, '500g', '/images/goods/goods004.jpg', 12, 0, 1, 3, 1);
+INSERT INTO `goods_sku` VALUES (5, '2017-11-15 03:14:05', '2017-11-14 08:25:56', 0, '奇异果', '简介', 12.12, '500g', '/images/goods/goods012.jpg', 12, 0, 1, 4, 1);
+INSERT INTO `goods_sku` VALUES (6, '2017-11-15 03:15:09', '2017-11-14 08:26:09', 0, '大青虾', '简介', 34.00, '500g', '/images/goods/goods021.jpg', 12, 0, 1, 5, 2);
+INSERT INTO `goods_sku` VALUES (7, '2017-11-15 03:15:53', '2017-11-14 08:26:19', 0, '北海道秋刀鱼', '简介', 50.00, '500g', '/images/goods/goods020.jpg', 15, 0, 1, 6, 2);
+INSERT INTO `goods_sku` VALUES (8, '2017-11-15 03:16:24', '2017-11-14 08:26:31', 0, '扇贝', '简介', 56.60, '500g', '/images/goods/goods019.jpg', 13, 0, 1, 7, 2);
+INSERT INTO `goods_sku` VALUES (9, '2017-11-15 03:17:13', '2017-11-14 08:26:58', 0, '基围虾', '简介', 100.90, '500g', '/images/goods/goods018.jpg', 14, 0, 1, 8, 2);
+INSERT INTO `goods_sku` VALUES (10, '2017-11-15 03:17:47', '2017-11-14 08:29:56', 0, '猪肉', '简介', 23.99, '500g', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5GnomAQq89AADQVMDvqR80681832', 100, 0, 1, 9, 3);
+INSERT INTO `goods_sku` VALUES (11, '2017-11-15 03:18:15', '2017-11-14 08:31:27', 0, '牛肉', '简介', 34.99, '500g', 'https://img12.360buyimg.com/n7/jfs/t1/105673/12/12533/102652/5e4b3a4eEbbdc1fd0/9af2dce40074db3a.jpg', 100, 0, 1, 10, 3);
+INSERT INTO `goods_sku` VALUES (12, '2017-11-15 03:18:44', '2017-11-14 08:32:22', 0, '羊肉', '简介', 56.99, '500g', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5GlzeAQUebAAB4RyoHb2Q0951093', 100, 0, 1, 11, 3);
+INSERT INTO `goods_sku` VALUES (13, '2017-11-15 03:19:10', '2017-11-14 08:33:15', 0, '牛排', '简介', 99.99, '500g', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5Gl0WAE3B7AALPyGvbwlU8458834', 100, 0, 1, 12, 3);
+INSERT INTO `goods_sku` VALUES (14, '2017-11-15 03:19:44', '2017-11-14 08:34:31', 0, '盒装鸡蛋', '简介', 23.00, '500g', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5Gl72AFJMTAADUhiqBxmM8961108', 100, 0, 1, 13, 4);
+INSERT INTO `goods_sku` VALUES (15, '2017-11-15 03:20:20', '2017-11-14 08:35:21', 0, '鸡肉', '简介', 32.00, '500g', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5Gl8yAd9ffAABKcPkh3W05481580', 100, 0, 1, 14, 4);
+INSERT INTO `goods_sku` VALUES (16, '2017-11-15 03:20:53', '2017-11-14 08:37:27', 0, '鸭蛋', '简介', 45.00, '盒', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5Gl_mAR3YpAACFWDqfnIU3338111', 121, 0, 1, 15, 4);
+INSERT INTO `goods_sku` VALUES (17, '2017-11-15 03:21:22', '2017-11-14 08:38:08', 0, '鸡腿', '简介', 45.00, '500g', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5GmAWANCtEAABKcPkh3W00947067', 12, 0, 1, 16, 4);
+INSERT INTO `goods_sku` VALUES (18, '2017-11-15 03:22:04', '2017-11-14 08:38:45', 0, '白菜', '简介', 4.50, '500g', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5GmGmAJ-qfAABajJ6hOr48556614', 100, 0, 1, 17, 5);
+INSERT INTO `goods_sku` VALUES (19, '2017-11-15 03:22:31', '2017-11-14 08:39:40', 0, '芹菜', '简介', 3.50, '500g', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5GmRyAXMgZAACfTDkCJSM5428239', 12, 0, 1, 18, 5);
+INSERT INTO `goods_sku` VALUES (20, '2017-11-15 03:23:21', '2017-11-14 08:40:08', 0, '香菜', '简介', 7.90, '500g', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5GmW6AUdyjAAIMVju0RpE9003719', 100, 0, 1, 19, 5);
+INSERT INTO `goods_sku` VALUES (21, '2017-11-15 03:23:46', '2017-11-14 08:40:38', 0, '冬瓜', '简介', 12.99, '500g', 'https://img14.360buyimg.com/n7/jfs/t1/122633/31/22648/266802/6208c47aE9fbf150b/f39fd904932933e5.jpg', 100, 0, 1, 20, 5);
+INSERT INTO `goods_sku` VALUES (22, '2017-11-15 03:24:10', '2017-11-14 08:41:19', 0, '鱼丸', '简介', 66.00, '500g', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5GmpuAepT1AAEPFCSH9iA0182016', 12, 0, 1, 21, 6);
+INSERT INTO `goods_sku` VALUES (23, '2017-11-15 03:24:37', '2017-11-14 08:41:59', 0, '蟹棒', '简介', 68.00, '500g', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5Gmt6ACUmkAACSEnHvwSU1562833', 100, 0, 1, 22, 6);
+INSERT INTO `goods_sku` VALUES (24, '2017-11-15 03:25:18', '2017-11-14 08:42:25', 0, '虾丸', '简介', 89.99, '500g', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5GmyyAS-JvAADXHmsQCko6649809', 100, 0, 1, 23, 6);
+INSERT INTO `goods_sku` VALUES (25, '2017-11-15 03:25:56', '2017-11-14 08:43:18', 0, '速冻水饺', '简介', 20.00, '袋', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5Gm16AHMxGAAB00nKU7CE6184485', 100, 0, 1, 24, 6);
+INSERT INTO `goods_sku` VALUES (26, '2017-11-14 08:53:00', '2017-11-14 08:53:00', 0, '越南芒果', '新鲜越南芒果', 29.90, '2.5kg', '//img10.360buyimg.com/n7/jfs/t1/29827/39/16186/173813/62769d26Ed4131e11/269fb155000c841c.jpg', 100, 0, 1, 25, 1);
+INSERT INTO `goods_sku` VALUES (27, '2017-11-17 07:57:00', '2017-11-17 07:57:00', 0, '鹌鹑蛋', '简介', 39.80, '126枚', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5Gm-WAVcFQAAK8H84FYIQ1825816', 100, 0, 1, 26, 4);
+INSERT INTO `goods_sku` VALUES (28, '2017-11-17 07:58:18', '2017-11-17 07:58:18', 0, '鹅蛋', '简介', 49.90, '6枚', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5GnDOALomPAAJf1mh7x1Y4992431', 80, 0, 1, 27, 4);
+INSERT INTO `goods_sku` VALUES (29, '2017-11-17 07:59:48', '2017-11-17 07:59:48', 0, '红辣椒', '简介', 11.00, '2.5kg', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5GnGKAJ2RzAAC-QOz0_YE0097411', 150, 0, 1, 28, 5);
 
 -- ----------------------------
 -- Table structure for goods_type
@@ -461,7 +461,7 @@ CREATE TABLE `index_promotion`  (
 -- Records of index_promotion
 -- ----------------------------
 INSERT INTO `index_promotion` VALUES (1, '2017-11-14 08:56:21', '2017-11-17 08:29:08', 0, '吃货暑假趴', '#', '/images/adv01.jpg', 0);
-INSERT INTO `index_promotion` VALUES (2, '2017-11-14 08:56:53', '2017-11-14 08:56:53', 0, '盛夏尝鲜季', '#', '/images/adv02.jpg', 1);
+INSERT INTO `index_promotion` VALUES (2, '2017-11-14 08:56:53', '2017-11-14 08:56:53', 0, '盛夏尝鲜季', '#', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5GifqAWb4lAAA98yvCs1I6264950', 1);
 
 -- ----------------------------
 -- Table structure for index_type_goods
@@ -479,8 +479,8 @@ CREATE TABLE `index_type_goods`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `df_index_type_goods_sku_id_0a8a17db_fk_df_goods_sku_id`(`sku_id`) USING BTREE,
   INDEX `df_index_type_goods_type_id_35192ffd_fk_df_goods_type_id`(`type_id`) USING BTREE,
-  CONSTRAINT `df_index_type_goods_type_id_35192ffd_fk_df_goods_type_id` FOREIGN KEY (`type_id`) REFERENCES `goods_type` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `df_index_type_goods_sku_id_0a8a17db_fk_df_goods_sku_id` FOREIGN KEY (`sku_id`) REFERENCES `goods_sku` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  CONSTRAINT `df_index_type_goods_sku_id_0a8a17db_fk_df_goods_sku_id` FOREIGN KEY (`sku_id`) REFERENCES `goods_sku` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `df_index_type_goods_type_id_35192ffd_fk_df_goods_type_id` FOREIGN KEY (`type_id`) REFERENCES `goods_type` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB AUTO_INCREMENT = 37 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
@@ -539,8 +539,8 @@ CREATE TABLE `order_goods`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `df_order_goods_order_id_6958ee23_fk_df_order_info_order_id`(`order_id`) USING BTREE,
   INDEX `df_order_goods_sku_id_b7d6e04e_fk_df_goods_sku_id`(`sku_id`) USING BTREE,
-  CONSTRAINT `df_order_goods_sku_id_b7d6e04e_fk_df_goods_sku_id` FOREIGN KEY (`sku_id`) REFERENCES `goods_sku` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `df_order_goods_order_id_6958ee23_fk_df_order_info_order_id` FOREIGN KEY (`order_id`) REFERENCES `order_info` (`order_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  CONSTRAINT `df_order_goods_order_id_6958ee23_fk_df_order_info_order_id` FOREIGN KEY (`order_id`) REFERENCES `order_info` (`order_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `df_order_goods_sku_id_b7d6e04e_fk_df_goods_sku_id` FOREIGN KEY (`sku_id`) REFERENCES `goods_sku` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
@@ -567,8 +567,8 @@ CREATE TABLE `order_info`  (
   PRIMARY KEY (`order_id`) USING BTREE,
   INDEX `df_order_info_addr_id_70c3726e_fk_df_address_id`(`addr_id`) USING BTREE,
   INDEX `df_order_info_user_id_ac1e5bf5_fk_df_user_id`(`user_id`) USING BTREE,
-  CONSTRAINT `df_order_info_user_id_ac1e5bf5_fk_df_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `df_order_info_addr_id_70c3726e_fk_df_address_id` FOREIGN KEY (`addr_id`) REFERENCES `address` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  CONSTRAINT `df_order_info_addr_id_70c3726e_fk_df_address_id` FOREIGN KEY (`addr_id`) REFERENCES `address` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `df_order_info_user_id_ac1e5bf5_fk_df_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
@@ -583,24 +583,25 @@ CREATE TABLE `user`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `password` varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `last_login` datetime NULL DEFAULT NULL,
-  `is_superuser` tinyint(1) NOT NULL,
+  `is_superuser` varchar(1) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `username` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `first_name` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `last_name` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `email` varchar(254) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `is_staff` tinyint(1) NOT NULL,
-  `is_active` tinyint(1) NOT NULL,
-  `date_joined` datetime NOT NULL,
-  `create_time` datetime NOT NULL,
-  `update_time` datetime NOT NULL,
-  `is_delete` tinyint(1) NOT NULL,
+  `is_staff` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
+  `is_active` tinyint(1) UNSIGNED ZEROFILL NOT NULL DEFAULT 0,
+  `date_joined` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `create_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `update_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `is_delete` tinyint(1) UNSIGNED ZEROFILL NOT NULL DEFAULT 0,
+  `status` varchar(1) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `code` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `username`(`username`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
+INSERT INTO `user` VALUES (5, 'e10adc3949ba59abbe56e057f20f883e', NULL, 'N', 'Yougeigei', '3287424278@qq.com', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'Y', 'f68e62f1909542abbc0fda12f8233e52');
 
 -- ----------------------------
 -- Table structure for user_groups
