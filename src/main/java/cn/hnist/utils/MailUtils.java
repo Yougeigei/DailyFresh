@@ -13,7 +13,7 @@ public final class MailUtils {
     // 发件人邮箱地址
     private static final String USER = "15754847614@163.com";
     // 登录密码或授权码
-    private static final String PASSWORD = "rioufctbhmlsijhj";
+    private static final String PASSWORD = "QALYKJNFYYSEBGPG";
 
     /**
      * 发送邮件

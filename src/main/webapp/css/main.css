@@ -335,6 +335,7 @@ html, body {
 .adv a {
   display: block;
   float: left;
+  height:135px;
 }
 
 /* 商品列表样式 */
@@ -1461,7 +1462,7 @@ html, body {
 }
 
 .pay_style_con .bank {
-  background: url(images/pay_icons.png) 6px -108px no-repeat #fff;
+  background: url(/images/pay_icons.png) 6px -108px no-repeat #fff;
 }
 
 .goods_list_th {
