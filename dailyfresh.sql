@@ -11,7 +11,7 @@
  Target Server Version : 50562
  File Encoding         : 65001
 
- Date: 21/06/2022 15:46:16
+ Date: 21/06/2022 15:51:38
 */
 
 SET NAMES utf8mb4;
@@ -461,8 +461,8 @@ CREATE TABLE `index_promotion`  (
 -- ----------------------------
 -- Records of index_promotion
 -- ----------------------------
-INSERT INTO `index_promotion` VALUES (1, '2017-11-14 08:56:21', '2017-11-17 08:29:08', 0, '吃货暑假趴', '#', '/images/adv01.jpg', 0);
-INSERT INTO `index_promotion` VALUES (2, '2017-11-14 08:56:53', '2017-11-14 08:56:53', 0, '盛夏尝鲜季', '#', '/images/adv02.jpg', 1);
+INSERT INTO `index_promotion` VALUES (1, '2017-11-14 08:56:21', '2017-11-17 08:29:08', 0, '吃货暑假趴', '#', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5GigSAW6JSAAA2pLUeB605909521', 0);
+INSERT INTO `index_promotion` VALUES (2, '2017-11-14 08:56:53', '2017-11-14 08:56:53', 0, '盛夏尝鲜季', '#', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5GifqAWb4lAAA98yvCs1I6264950', 1);
 
 -- ----------------------------
 -- Table structure for index_type_goods
