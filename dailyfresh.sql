@@ -11,7 +11,7 @@
  Target Server Version : 50562
  File Encoding         : 65001
 
- Date: 21/06/2022 15:51:38
+ Date: 22/06/2022 18:07:42
 */
 
 SET NAMES utf8mb4;
@@ -35,12 +35,13 @@ CREATE TABLE `address`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `df_address_user_id_5e6a5c8a_fk_df_user_id`(`user_id`) USING BTREE,
   CONSTRAINT `df_address_user_id_5e6a5c8a_fk_df_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of address
 -- ----------------------------
 INSERT INTO `address` VALUES (2, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, '冰墩墩', '天津市', '010050', '15754847614', 'Y', 5);
+INSERT INTO `address` VALUES (3, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, '杨俊明', '天津市西青区天津工业大学', '010050', '15754847614', 'N', 5);
 
 -- ----------------------------
 -- Table structure for auth_group
@@ -362,11 +363,11 @@ CREATE TABLE `goods_sku`  (
 -- ----------------------------
 -- Records of goods_sku
 -- ----------------------------
-INSERT INTO `goods_sku` VALUES (1, '2017-11-15 03:10:14', '2017-11-14 08:24:49', 0, '草莓 500g', '草莓简介', 10.00, '500g', 'https://cdn.jsdelivr.net/gh/Yougeigei/Image@main/img/goods/goods003.jpg', 98, 0, 1, 1, 1);
+INSERT INTO `goods_sku` VALUES (1, '2017-11-15 03:10:14', '2017-11-14 08:24:49', 0, '草莓 500g', '草莓简介', 10.00, '500g', 'https://cdn.jsdelivr.net/gh/Yougeigei/Image@main/img/goods/goods003.jpg', 96, 2, 1, 1, 1);
 INSERT INTO `goods_sku` VALUES (2, '2017-11-15 03:11:04', '2017-11-14 08:44:43', 0, '盒装草莓', '草莓简介', 20.00, '盒', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5Gi9WANAfbAADhpU9_Ylo4727207', 10, 0, 1, 1, 1);
-INSERT INTO `goods_sku` VALUES (3, '2017-11-15 03:12:32', '2017-11-14 08:25:22', 0, '葡萄', '葡萄简介', 20.00, '500g', 'https://cdn.jsdelivr.net/gh/Yougeigei/Image@main/img/goods/goods002.jpg', 9999, 0, 1, 2, 1);
-INSERT INTO `goods_sku` VALUES (4, '2017-11-15 03:13:16', '2017-11-14 08:25:34', 0, '柠檬', '简介', 32.00, '500g', 'https://cdn.jsdelivr.net/gh/Yougeigei/Image@main/img/goods/goods004.jpg', 12, 0, 1, 3, 1);
-INSERT INTO `goods_sku` VALUES (5, '2017-11-15 03:14:05', '2017-11-14 08:25:56', 0, '奇异果', '简介', 12.12, '500g', 'https://cdn.jsdelivr.net/gh/Yougeigei/Image@main/img/goods/goods012.jpg', 12, 0, 1, 4, 1);
+INSERT INTO `goods_sku` VALUES (3, '2017-11-15 03:12:32', '2017-11-14 08:25:22', 0, '葡萄', '葡萄简介', 20.00, '500g', 'https://cdn.jsdelivr.net/gh/Yougeigei/Image@main/img/goods/goods002.jpg', 9993, 6, 1, 2, 1);
+INSERT INTO `goods_sku` VALUES (4, '2017-11-15 03:13:16', '2017-11-14 08:25:34', 0, '柠檬', '简介', 32.00, '500g', 'https://cdn.jsdelivr.net/gh/Yougeigei/Image@main/img/goods/goods004.jpg', 11, 1, 1, 3, 1);
+INSERT INTO `goods_sku` VALUES (5, '2017-11-15 03:14:05', '2017-11-14 08:25:56', 0, '奇异果', '简介', 12.12, '500g', 'https://cdn.jsdelivr.net/gh/Yougeigei/Image@main/img/goods/goods012.jpg', 11, 1, 1, 4, 1);
 INSERT INTO `goods_sku` VALUES (6, '2017-11-15 03:15:09', '2017-11-14 08:26:09', 0, '大青虾', '简介', 34.00, '500g', 'https://cdn.jsdelivr.net/gh/Yougeigei/Image@main/img/goods/goods021.jpg', 12, 0, 1, 5, 2);
 INSERT INTO `goods_sku` VALUES (7, '2017-11-15 03:15:53', '2017-11-14 08:26:19', 0, '北海道秋刀鱼', '简介', 50.00, '500g', 'https://cdn.jsdelivr.net/gh/Yougeigei/Image@main/img/goods/goods020.jpg', 15, 0, 1, 6, 2);
 INSERT INTO `goods_sku` VALUES (8, '2017-11-15 03:16:24', '2017-11-14 08:26:31', 0, '扇贝', '简介', 56.60, '500g', 'https://cdn.jsdelivr.net/gh/Yougeigei/Image@main/img/goods/goods019.jpg', 13, 0, 1, 7, 2);
@@ -387,7 +388,7 @@ INSERT INTO `goods_sku` VALUES (22, '2017-11-15 03:24:10', '2017-11-14 08:41:19'
 INSERT INTO `goods_sku` VALUES (23, '2017-11-15 03:24:37', '2017-11-14 08:41:59', 0, '蟹棒', '简介', 68.00, '500g', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5Gmt6ACUmkAACSEnHvwSU1562833', 100, 0, 1, 22, 6);
 INSERT INTO `goods_sku` VALUES (24, '2017-11-15 03:25:18', '2017-11-14 08:42:25', 0, '虾丸', '简介', 89.99, '500g', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5GmyyAS-JvAADXHmsQCko6649809', 100, 0, 1, 23, 6);
 INSERT INTO `goods_sku` VALUES (25, '2017-11-15 03:25:56', '2017-11-14 08:43:18', 0, '速冻水饺', '简介', 20.00, '袋', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5Gm16AHMxGAAB00nKU7CE6184485', 100, 0, 1, 24, 6);
-INSERT INTO `goods_sku` VALUES (26, '2017-11-14 08:53:00', '2017-11-14 08:53:00', 0, '越南芒果', '新鲜越南芒果', 29.90, '2.5kg', '//img10.360buyimg.com/n7/jfs/t1/29827/39/16186/173813/62769d26Ed4131e11/269fb155000c841c.jpg', 100, 0, 1, 25, 1);
+INSERT INTO `goods_sku` VALUES (26, '2017-11-14 08:53:00', '2017-11-14 08:53:00', 0, '越南芒果', '新鲜越南芒果', 29.90, '2.5kg', '//img10.360buyimg.com/n7/jfs/t1/29827/39/16186/173813/62769d26Ed4131e11/269fb155000c841c.jpg', 99, 1, 1, 25, 1);
 INSERT INTO `goods_sku` VALUES (27, '2017-11-17 07:57:00', '2017-11-17 07:57:00', 0, '鹌鹑蛋', '简介', 39.80, '126枚', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5Gm-WAVcFQAAK8H84FYIQ1825816', 100, 0, 1, 26, 4);
 INSERT INTO `goods_sku` VALUES (28, '2017-11-17 07:58:18', '2017-11-17 07:58:18', 0, '鹅蛋', '简介', 49.90, '6枚', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5GnDOALomPAAJf1mh7x1Y4992431', 80, 0, 1, 27, 4);
 INSERT INTO `goods_sku` VALUES (29, '2017-11-17 07:59:48', '2017-11-17 07:59:48', 0, '红辣椒', '简介', 11.00, '2.5kg', 'http://image-python.itheima.net/group1/M00/00/01/rBAAlV5GnGKAJ2RzAAC-QOz0_YE0097411', 150, 0, 1, 28, 5);
@@ -529,12 +530,12 @@ INSERT INTO `index_type_goods` VALUES (36, '2017-11-17 08:00:31', '2017-11-17 08
 DROP TABLE IF EXISTS `order_goods`;
 CREATE TABLE `order_goods`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `create_time` datetime NOT NULL,
-  `update_time` datetime NOT NULL,
-  `is_delete` tinyint(1) NOT NULL,
+  `create_time` datetime NULL DEFAULT NULL,
+  `update_time` datetime NULL DEFAULT NULL,
+  `is_delete` tinyint(1) NOT NULL DEFAULT 0,
   `count` int(11) NOT NULL,
   `price` decimal(10, 2) NOT NULL,
-  `comment` varchar(256) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `comment` varchar(256) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `order_id` varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `sku_id` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
@@ -542,27 +543,34 @@ CREATE TABLE `order_goods`  (
   INDEX `df_order_goods_sku_id_b7d6e04e_fk_df_goods_sku_id`(`sku_id`) USING BTREE,
   CONSTRAINT `df_order_goods_order_id_6958ee23_fk_df_order_info_order_id` FOREIGN KEY (`order_id`) REFERENCES `order_info` (`order_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `df_order_goods_sku_id_b7d6e04e_fk_df_goods_sku_id` FOREIGN KEY (`sku_id`) REFERENCES `goods_sku` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of order_goods
 -- ----------------------------
+INSERT INTO `order_goods` VALUES (1, NULL, NULL, 0, 2, 10.00, '', '20220622163238', 1);
+INSERT INTO `order_goods` VALUES (2, NULL, NULL, 0, 1, 29.90, '', '20220622163335', 26);
+INSERT INTO `order_goods` VALUES (3, NULL, NULL, 0, 3, 20.00, '', '20220622163335', 3);
+INSERT INTO `order_goods` VALUES (4, NULL, NULL, 0, 2, 20.00, '', '20220622164302', 3);
+INSERT INTO `order_goods` VALUES (5, NULL, NULL, 0, 1, 12.12, '', '20220622165830', 5);
+INSERT INTO `order_goods` VALUES (6, NULL, NULL, 0, 1, 20.00, '', '20220622170813', 3);
+INSERT INTO `order_goods` VALUES (7, NULL, NULL, 0, 1, 32.00, '', '20220622173211', 4);
 
 -- ----------------------------
 -- Table structure for order_info
 -- ----------------------------
 DROP TABLE IF EXISTS `order_info`;
 CREATE TABLE `order_info`  (
-  `create_time` datetime NOT NULL,
-  `update_time` datetime NOT NULL,
-  `is_delete` tinyint(1) NOT NULL,
+  `create_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `update_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `is_delete` tinyint(1) NOT NULL DEFAULT 0,
   `order_id` varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `pay_method` smallint(6) NOT NULL,
-  `total_count` int(11) NOT NULL,
-  `total_price` decimal(10, 2) NOT NULL,
-  `transit_price` decimal(10, 2) NOT NULL,
-  `order_status` smallint(6) NOT NULL,
-  `trade_no` varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `total_count` int(11) NOT NULL DEFAULT 0,
+  `total_price` decimal(10, 2) UNSIGNED NULL DEFAULT NULL,
+  `transit_price` decimal(10, 2) UNSIGNED NOT NULL DEFAULT 10.00,
+  `order_status` smallint(6) NOT NULL DEFAULT 1,
+  `trade_no` varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `addr_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`order_id`) USING BTREE,
@@ -575,6 +583,12 @@ CREATE TABLE `order_info`  (
 -- ----------------------------
 -- Records of order_info
 -- ----------------------------
+INSERT INTO `order_info` VALUES ('0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, '20220622163238', 2, 2, 20.00, 10.00, 3, '', 2, 5);
+INSERT INTO `order_info` VALUES ('0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, '20220622163335', 2, 4, 89.90, 10.00, 4, '', 2, 5);
+INSERT INTO `order_info` VALUES ('0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, '20220622164302', 2, 2, 40.00, 10.00, 3, '', 3, 5);
+INSERT INTO `order_info` VALUES ('0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, '20220622165830', 2, 1, 12.12, 10.00, 3, '', 3, 5);
+INSERT INTO `order_info` VALUES ('0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, '20220622170813', 2, 1, 20.00, 10.00, 3, '', 2, 5);
+INSERT INTO `order_info` VALUES ('0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, '20220622173211', 2, 1, 32.00, 10.00, 3, '', 2, 5);
 
 -- ----------------------------
 -- Table structure for user

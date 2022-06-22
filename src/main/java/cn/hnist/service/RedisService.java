@@ -3,6 +3,8 @@ package cn.hnist.service;
 import cn.hnist.dao.GoodsDao;
 import cn.hnist.pojo.CartVo;
 import cn.hnist.pojo.GoodsSKU;
+
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import redis.clients.jedis.Jedis;
@@ -18,11 +20,12 @@ public class RedisService {
     @Autowired
     GoodsDao goodsDao;
 
+
     public Jedis init() {
         Jedis jedis;
         try {
-            jedis = new Jedis("47.107.251.224", 6379);
-            jedis.auth("JanvySun");
+            jedis = new Jedis("81.69.56.215", 6379);
+            jedis.auth("tencent@Yang888");
         } catch (Exception e) {
             throw new RuntimeException("无法连接到Redis数据库");
         }
