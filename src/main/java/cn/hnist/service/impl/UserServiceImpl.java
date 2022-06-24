@@ -44,7 +44,7 @@ public class UserServiceImpl implements UserService {
             // 保存用户信息
             userDao.save(user);
             // 发送激活邮件
-            String url = "http://localhost/user/activeHandle/" + user.getCode();
+            String url = "http://81.69.56.215/user/activeHandle/" + user.getCode();
             String to = user.getEmail();
             String title = "天天生鲜欢迎您";
             String text = "<h3>" + user.getUsername() + ",欢迎您成为天天生鲜会员</h3></br>请点击以下链接激活您的账户</br>"

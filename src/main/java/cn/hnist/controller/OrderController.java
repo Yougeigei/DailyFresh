@@ -170,7 +170,7 @@ public class OrderController {
             info.setFlag(true);
             orderInfo.setOrder_status(3);
             orderService.updateOrderInfoStatus(orderInfo);
-            info.setMessage("http://localhost:8080/user/alipay/" + order_id);
+            info.setMessage("http://81.69.56.215/user/alipay/" + order_id);
         }
 
         return info;
